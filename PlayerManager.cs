@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+// using is equal to the swift function "import"
 
 public class GameManager : MonoBehaviour
 {
@@ -18,12 +19,13 @@ public class GameManager : MonoBehaviour
 
     List<int> bleeps;
     List<int> playerBleeps;
-
+//bleeps utilized to make sound
     System.Random rg;
+    // random arg used for pattern of the gaem
 
     bool inputEnabled = false;
     bool gameOver = false;
-
+//utlized to check in the instance where player loses
     void Start()
     {
         gameButtons = new List<GameObject>();
@@ -102,7 +104,7 @@ public class GameManager : MonoBehaviour
         inputEnabled = false;
 
         rg = new System.Random("hakunamatata".GetHashCode());
-
+// hakunamatata is a filler string word
         SetBleeps();
 
         yield return new WaitForSeconds(1f);
@@ -119,7 +121,7 @@ public class GameManager : MonoBehaviour
         yield return null;
     }
 
-    void Bleep(int index)
+    void Bleep(int index) // function to play audio
     {
         LeanTween.value(gameButtons[index], buttonSettings[index].normalColor, buttonSettings[index].highlightColor, 0.25f).setOnUpdate((Color color) => {
             gameButtons[index].GetComponent<Image>().color = color;
