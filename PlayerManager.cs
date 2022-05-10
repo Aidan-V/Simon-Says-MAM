@@ -1,7 +1,7 @@
-using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine
+using UnityEngine.UI
+using System.Collections
+using System.Collections.Generic
 // using is equal to the swift function "import"
 
 public class GameManager : MonoBehaviour
